@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            border: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            color: gainsboro;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .sidebar {
+            height: 100vh;
+            /* background-color: #343434; */
+            background-color: #2d2e30;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .navs {
+            width: 100%;
+            height: 350px;
+            padding-top: 20px;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navs-item {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .light-dark {
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .sidebar-2 {
+            height: 100vh;
+            background-color: #28292a;
+            padding: 0;
+            font-size: 18px;
+            padding-left: 30px;
+            padding-right: 30px;
+            overflow-y: scroll;
+        }
+
+        .sidebar-2::-webkit-scrollbar{
+            display: none;
+        }
+
+        .sidebar-2-header1,
+        .sidebar-2-header2 {
+            width: 100%;
+            height: 80px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-2-header1 {
+            justify-content: end;
+        }
+
+        .sidebar-2-content1 {
+            width: 100%;
+            height: 50px;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sidebar-2-content2 {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-icon {
+            /* border: 2px solid yellow; */
+        }
+
+        .sidebar-2-icons {
+            font-size: 40px;
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        .div-filters1{
+            height: 55px;
+            background-color: grey;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 10px;
+        }
+
+
+        .mainContent {
+            height: 100vh;
+            background-color: #202125;
+            overflow-y: scroll;
+
+        }
+
+        .content-header {
+            height: 80px;
+            background-color: transparent;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .searchBar {
+            width: 500px;
+            height: 50px;
+            background-color: #262a33;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        .searchIcon {
+            font-size: 25px;
+        }
+
+        .inputbox {
+            background-color: transparent;
+            outline: 0;
+            font-size: 18px;
+        }
+
+        .mobile-div {
+            width: 110px;
+            margin-left: 10px;
+            height: 100%;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .mobile-search,
+        .mobile-light_mode,
+        .close-filter {
+            width: 45px;
+            height: 45px;
+            background-color: #262a33;
+            border-radius: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .close-filter {
+            background-color: grey;
+            margin-left: 20px;
+        }
+
+
+        .content-cards-section {
+            width: 100%;
+            margin-left: 10px;
+            height: 180px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            overflow-x: scroll;
+            gap: 20px;
+
+        }
+
+        .content-cards-section::-webkit-scrollbar {
+            display: none;
+        }
+
+        .move-cards {
+            width: 45px;
+            height: 45px;
+            background-color: grey;
+            border-radius: 45px;
+            position: absolute;
+            right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-cards {
+            width: 290px;
+            height: 120px;
+            background-color: #2d2e30;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-left {
+            width: 220px;
+            height: 100px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            width: 220px;
+            height: 50px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .card-img {
+            width: 40px;
+            margin-right: 20px;
+            height: 100px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+
+        }
+
+        .card-desc {
+            width: 190px;
+            margin-left: 20px;
+            margin-right: 10px;
+            height: 50px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .content-section-grid {
+            width: 100%;
+            margin-left: 10px;
+            background-color: transparent;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(6, 1fr);
+            row-gap: 30px;
+        }
+
+        .grid-item {
+            background-color: transparent;
+            width: 100px;
+            height: 120px;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .grid-item:hover {
+            background-color: grey;
+        }
+
+        .mainIcons {
+            font-size: 40px;
+        }
+
+        @media (max-width: 576px) {
+
+            .sidebar,
+            .searchBar,
+            .shoppingBag,
+            .sidebar-2 {
+                display: none;
+            }
+
+            .mobile-div {
+                display: flex;
+            }
+
+            .content-header {
+                font-size: 20px;
+            }
+
+            .content-section-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .mainIcons {
+                font-size: 30px;
+            }
+
+        }
+
+        /*
+        #content2Id {
+            display: none;
+        }
+        
+        .header,
+        .sidebar,
+        .content {  
+
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menuicon {
+            position: absolute;
+            top: 8vh;
+            margin-left: 30px;
+            display: none;
+            border: 1px solid red;
+        }
+
+        .sidebar,
+        .content {
+            transition-property: display;
+            transition-duration: 2s;
+            transition-timing-function: ease;
+        }
+*/
+    </style>
+</head>
+
+<body>
+    <!-- 
+    <div class="menuicon" onclick="menuToggle()">
+        <span class="material-symbols-outlined">menu</span>
+    </div>
+-->
+
+    <div class="row">
+        <div class="sidebar col-md-1">
+            <div class="navs">
+                <div class="navs-item">
+                    <span class="material-symbols-outlined">font_download</span>
+                    Fonts
+                </div>
+                <div class="navs-item">
+                    <span class="material-symbols-outlined">language</span>
+                    Noto
+                </div>
+                <div class="navs-item">
+                    <span class="material-symbols-outlined">interests</span>
+                    Icons
+                </div>
+                <div class="navs-item">
+                    <span class="material-symbols-outlined">school</span>
+                    Knowledge
+                </div>
+                <div class="navs-item">
+                    <span class="material-symbols-outlined">help</span>
+                    FAQ
+                </div>
+            </div>
+            <div class="light-dark">
+                <span class="material-symbols-outlined">
+                    light_mode
+                </span>
+            </div>
+        </div>
+
+        <div class="sidebar-2 col-md-3">
+            <div class="sidebar-2-header1"> <span class="material-symbols-outlined">refresh</span> &nbsp; Reset all
+                &nbsp;&nbsp;&nbsp; <div class="close-filter"> <span class="material-symbols-outlined">close</span>
+                </div>
+            </div>
+            <div class="sidebar-2-header2"> <span class="material-symbols-outlined">tune</span> &nbsp; Customize</div>
+            <div class="sidebar-2-content1">
+                <div>Fill <span class="info-icon material-symbols-outlined">info</span></div>
+                <div><span class="sidebar-2-icons material-symbols-outlined">toggle_off</span></div>
+            </div>
+
+            <div class="sidebar-2-content2">
+                <div>Weight <span class="info-icon material-symbols-outlined">info</span> </div> <br>
+                <div><input class="slider" type="range" min="1" max="100" value="50"></div>
+            </div>
+            <div class="sidebar-2-content1"> <div>100</div> <div>700</div> </div>
+            <br>
+            <div class="sidebar-2-content2"> <div>Grade <span class="info-icon material-symbols-outlined">info</span></div> <br>
+                <div><input class="slider" type="range" min="1" max="100" value="50"></div>
+            </div>
+            <div class="sidebar-2-content1"> <div>-25</div> <div>200</div> </div>
+
+            <div class="sidebar-2-content2"> <div>Optical size <span class="info-icon material-symbols-outlined">info</span></div> <br>
+                <div><input class="slider" type="range" min="1" max="100" value="50"></div>
+            </div>
+            <div class="sidebar-2-content1"> <div>20px</div> <div>48px</div> </div>
+            <hr>
+            <br>
+            
+            <div class="sidebar-2-content2">
+                <div>Filter</div>
+                <br>
+                <div class="sidebar-2-content1"> <div> <span class="material-symbols-outlined">laundry</span> Style</div> <div><span class="material-symbols-outlined">keyboard_arrow_up</span></div> </div>
+                <div class="div-filters1"> <div> Material Symbols (new) </div> <div> <span class="material-symbols-outlined">arrow_drop_down</span> </div> </div>
+                <div class="div-filters1">Outlined</div>
+            </div>
+            <br>
+            <div class="sidebar-2-content2">
+                <div class="sidebar-2-content1"> <div> <span class="material-symbols-outlined">folder</span> Category</div> <div><span class="material-symbols-outlined">keyboard_arrow_up</span></div> </div>
+                <div class="div-filters1"> <div> All </div> <div> <span class="material-symbols-outlined">arrow_drop_down</span> </div> </div>
+                <div class="div-filters1">Outlined</div>
+            </div>
+
+        </div>
+
+        <div class="mainContent  col-12 col-sm-12 col-md-8">
+            <div class="content-header">
+                <img src="Google-Fonts-Logo.png" alt="Google-Fonts-Logo" width="70px">
+                <span>Google Fonts &nbsp;</span>
+
+                <div class="searchBar">
+                    &nbsp;
+                    <span class="searchIcon material-symbols-outlined">search</span>
+                    &nbsp;
+                    <input class="inputbox" type="text" placeholder="Search icons">
+                </div>
+
+                <span class="shoppingBag material-symbols-outlined">shopping_bag</span>
+
+                <div class="mobile-div">
+                    <div class="mobile-search">
+                        <span class="material-symbols-outlined">search</span>
+                    </div>
+                    <div class="mobile-light_mode">
+                        <span class="material-symbols-outlined">light_mode</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content-cards-section">
+                <div class="move-cards">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </div>
+                <div class="content-cards">
+                    <div class="card-left">
+                        <div class="card-header">Material Design icon guidelines</div>
+                        <div class="card-desc">Learn about the latest best practices for icons</div>
+                    </div>
+
+                    <div class="card-img"><img src="card-1-img.svg" width="100%"></div>
+                </div>
+
+                <div class="content-cards">
+                    <div class="card-left">
+                        <div class="card-header">Figma plugin</div>
+                        <div class="card-desc">Use the Material Symbols plugin on Figma</div>
+                    </div>
+
+                    <div class="card-img"><img src="card-2-img.png" width="100%"></div>
+                </div>
+
+                <div class="content-cards">
+                    <div class="card-left">
+                        <div class="card-header">GitHub repo</div>
+                        <div class="card-desc">This repository contains the binary font file served by Google Fonts
+                        </div>
+                    </div>
+
+                    <div class="card-img"><img src="card-3-img.png" width="100%"></div>
+                </div>
+
+                <div class="content-cards">
+                    <div class="card-left">
+                        <div class="card-header">Apache licence</div>
+                        <div class="card-desc">Material Symbols are avilable under the Apache License Version 2.0</div>
+                    </div>
+
+                    <div class="card-img"><img src="card-3-img.png" width="100%"></div>
+                </div>
+
+                <div class="content-cards">
+                    <div class="card-left">
+                        <div class="card-header">Developer Guide</div>
+                        <div class="card-desc">How to use Material Symbols in your projects</div>
+                    </div>
+
+                    <div class="card-img"><img src="card-5-img.png" width="100%"></div>
+                </div>
+
+                <div class="content-cards">
+                    <div class="card-left">
+                        <div class="card-header">Download Material Symbols</div>
+                        <div class="card-desc">Get all Material Symbols in a single variable font file</div>
+                    </div>
+
+                    <div class="card-img"><img src="card-6-img.png" width="100%"></div>
+                </div>
+
+            </div>
+
+            <div class="content-section-grid">
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">search</span>
+                    <br>
+                    Search
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">home</span>
+                    <br>
+                    Home
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">menu</span>
+                    <br>
+                    Menu
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">close</span>
+                    <br>
+                    Close
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">settings</span>
+                    <br>
+                    Settings
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">check_circle</span>
+                    <br>
+                    Check circle
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">favorite</span>
+                    <br>
+                    Favorite
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">add</span>
+                    <br>
+                    Add
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">delete</span>
+                    <br>
+                    Delete
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">arrow_back</span>
+                    <br>
+                    Arrow back
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">star</span>
+                    <br>
+                    Star
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">chevron_right</span>
+                    <br>
+                    Chevron right
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">logout</span>
+                    <br>
+                    Logout
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">arrow_forward_ios</span>
+                    <br>
+                    Arrow forward ios
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">add_circle</span>
+                    <br>
+                    Add circle
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">cancel</span>
+                    <br>
+                    Cancel
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">arrow_back_ios</span>
+                    <br>
+                    Arrow back ios
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">arrow_forward</span>
+                    <br>
+                    Arrow forward
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">arrow_drop_down</span>
+                    <br>
+                    Arrow dropdown
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">more_vert</span>
+                    <br>
+                    More vert
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">check</span>
+                    <br>
+                    Check
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">check_box</span>
+                    <br>
+                    Check box
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">open_in_new</span>
+                    <br>
+                    Open in new
+                </div>
+
+                <div class="grid-item">
+                    <span class="mainIcons material-symbols-outlined">toggle_on</span>
+                    <br>
+                    Toggle on
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- <div id="content2Id" class="content col-8">Content</div> -->
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+</body>
+<script>
+    function menuToggle() {
+        var div = document.getElementById('sidebarId');
+        var div2 = document.getElementById('content2Id');
+        var div3 = document.getElementById('content1Id');
+        if (div.style.display == "none") {
+            div.style.display = "flex";
+            div2.style.display = "flex";
+            div3.style.display = "none";
+        }
+        else {
+            div.style.display = "none";
+            div2.style.display = "none";
+            div3.style.display = "flex";
+        }
+    }
+</script>
+
+</html>

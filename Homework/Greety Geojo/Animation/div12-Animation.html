@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animDiv1 {
+            width: 20dvw;
+            height: 20dvw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3vw;
+            background-color: green;
+            animation: animName 5s ease infinite;
+        }
+
+        @keyframes animName {
+            100% {
+                border-radius: 50%;
+            }
+        }
+
+        .animDiv2 {
+            width: 40dvw;
+            height: 40dvw;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+
+        }
+
+        .subDivs {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw;
+        }
+
+        .subDiv1 {
+            background-color: purple;
+            animation: motion1 6s ease infinite;
+        }
+
+        .subDiv2 {
+            background-color: red;
+            animation: motion2 6s ease infinite;
+        }
+
+        .subDiv3 {
+            background-color: green;
+            animation: motion3 6s ease infinite;
+        }
+
+        .subDiv4 {
+            background-color: blue;
+            animation: motion4 6s ease infinite;
+        }
+
+        .subDiv5 {
+            background-color: orange;
+
+        }
+
+        .subDiv6 {
+            background-color: black;
+            animation: motion6 6s ease infinite;
+        }
+
+        .subDiv7 {
+            background-color: teal;
+            animation: motion7 6s ease infinite;
+        }
+
+        .subDiv8 {
+            background-color: crimson;
+            animation: motion8 6s ease infinite;
+        }
+
+        .subDiv9 {
+            background-color: aqua;
+            animation: motion9 6s ease infinite;
+        }
+
+        @keyframes motion1 {
+            12.5% {
+                transform: translate(100%, 0%);
+            }
+
+            25% {
+                transform: translate(200%, 0%);
+            }
+
+            37.5% {
+                transform: translate(200%, 100%);
+            }
+
+            50% {
+                transform: translate(200%, 200%);
+            }
+
+            62.5% {
+                transform: translate(100%, 200%);
+            }
+
+            75% {
+                transform: translate(0%, 200%);
+            }
+
+            87.5% {
+                transform: translate(0%, 100%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+
+        @keyframes motion2 {
+            12.5% {
+                transform: translate(100%, 0%);
+            }
+
+            25% {
+                transform: translate(100%, 100%);
+            }
+
+            37.5% {
+                transform: translate(100%, 200%);
+            }
+
+            50% {
+                transform: translate(0%, 200%);
+            }
+
+            62.5% {
+                transform: translate(-100%, 200%);
+            }
+
+            75% {
+                transform: translate(-100%, 100%);
+            }
+
+            87.5% {
+                transform: translate(-100%, 0%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+
+        @keyframes motion3 {
+            12.5% {
+                transform: translate(0%, 100%);
+            }
+
+            25% {
+                transform: translate(0%, 200%);
+            }
+
+            37.5% {
+                transform: translate(-100%, 200%);
+            }
+
+            50% {
+                transform: translate(-200%, 200%);
+            }
+
+            62.5% {
+                transform: translate(-200%, 100%);
+            }
+
+            75% {
+                transform: translate(-200%, 0%);
+            }
+
+            87.5% {
+                transform: translate(-100%, 0%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+
+        @keyframes motion6 {
+            12.5% {
+                transform: translate(0%, 100%);
+            }
+
+            25% {
+                transform: translate(-100%, 100%);
+            }
+
+            37.5% {
+                transform: translate(-200%, 100%);
+            }
+
+            50% {
+                transform: translate(-200%, 0%);
+            }
+
+            62.5% {
+                transform: translate(-200%, -100%);
+            }
+
+            75% {
+                transform: translate(-100%, -100%);
+            }
+
+            87.5% {
+                transform: translate(0%, -100%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+
+        @keyframes motion9 {
+            12.5% {
+                transform: translate(-100%, 0%);
+            }
+
+            25% {
+                transform: translate(-200%, 0%);
+            }
+
+            37.5% {
+                transform: translate(-200%, -100%);
+            }
+
+            50% {
+                transform: translate(-200%, -200%);
+            }
+
+            62.5% {
+                transform: translate(-100%, -200%);
+            }
+
+            75% {
+                transform: translate(0%, -200%);
+            }
+
+            87.5% {
+                transform: translate(0%, -100%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+
+        @keyframes motion8 {
+            12.5% {
+                transform: translate(-100%, 0%);
+            }
+
+            25% {
+                transform: translate(-100%, -100%);
+            }
+
+            37.5% {
+                transform: translate(-100%, -200%);
+            }
+
+            50% {
+                transform: translate(0%, -200%);
+            }
+
+            62.5% {
+                transform: translate(100%, -200%);
+            }
+
+            75% {
+                transform: translate(100%, -100%);
+            }
+
+            87.5% {
+                transform: translate(100%, 0%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+
+        @keyframes motion7 {
+            12.5% {
+                transform: translate(0%, -100%);
+            }
+
+            25% {
+                transform: translate(0%, -200%);
+            }
+
+            37.5% {
+                transform: translate(100%, -200%);
+            }
+
+            50% {
+                transform: translate(200%, -200%);
+            }
+
+            62.5% {
+                transform: translate(200%, -100%);
+            }
+
+            75% {
+                transform: translate(200%, 0%);
+            }
+
+            87.5% {
+                transform: translate(100%, 0%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+
+        @keyframes motion4 {
+            12.5% {
+                transform: translate(0%, -100%);
+            }
+
+            25% {
+                transform: translate(100%, -100%);
+            }
+
+            37.5% {
+                transform: translate(200%, -100%);
+            }
+
+            50% {
+                transform: translate(200%, 0%);
+            }
+
+            62.5% {
+                transform: translate(200%, 100%);
+            }
+
+            75% {
+                transform: translate(100%, 100%);
+            }
+
+            87.5% {
+                transform: translate(0%, 100%);
+            }
+
+            100% {
+                transform: translate(0%, 0%);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <div class="animDiv1">Animation Div</div>
+        <br>
+        <br>
+        <div class="animDiv2">
+            <div class="subDivs subDiv1"></div>
+            <div class="subDivs subDiv2"></div>
+            <div class="subDivs subDiv3"></div>
+            <div class="subDivs subDiv4"></div>
+            <div class="subDivs subDiv5">Center</div>
+            <div class="subDivs subDiv6"></div>
+            <div class="subDivs subDiv7"></div>
+            <div class="subDivs subDiv8"></div>
+            <div class="subDivs subDiv9"></div>
+        </div>
+    </center>
+</body>
+
+</html>
